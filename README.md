@@ -84,25 +84,27 @@ Examples of SQL Analytical Views created:
 
 ## 🧮 Key SQL Code Samples
 
-**Total Loan Applications**<br>
+**Sample.1 Total Loan Applications**<br>
 
 `SELECT COUNT(id) AS Total_Loan_Applications FROM loans_data;`<br>
+
 <img width="229" height="62" alt="Screenshot 2025-10-26 003033" src="https://github.com/user-attachments/assets/8c5a21c3-b430-4396-9dd7-032275c8d92b" />
 
 ---
 
-**Month-on-Month Funding Trend**<br>
+**Sample.2 Month-on-Month Funding Trend**<br>
 
 `CREATE VIEW Total_Funded_Amount AS`<br>
 `SELECT MONTH(issue_date) AS Month, ROUND(SUM(loan_amount)) AS Monthly_Amount`<br>
 `FROM loans_data`<br>
 `GROUP BY MONTH(issue_date)`<br>
 `ORDER BY MONTH(issue_date);`<br>
+
 <img width="609" height="318" alt="Screenshot 2025-10-26 003319" src="https://github.com/user-attachments/assets/3274d87d-1a65-4b13-ab0b-99fe91c066e2" />
 
 ---
 
-**Loan Performance Metrics View**<br>
+**Sample.3 Loan Performance Metrics View**<br>
 
 `CREATE VIEW Loan_Performance_Metrics_View AS`<br>
 `SELECT`<br>
@@ -115,6 +117,7 @@ Examples of SQL Analytical Views created:
 `FROM loans_data`<br>
 `WHERE (issue_date) BETWEEN '2021-01-01' AND '2021-12-31'`<br>
 `GROUP BY loan_status;`<br>
+
 <img width="924" height="141" alt="Screenshot 2025-10-26 003933" src="https://github.com/user-attachments/assets/e730f461-deba-4c9b-ad19-6df6e89bf423" />
 
 
