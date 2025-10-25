@@ -84,32 +84,37 @@ Examples of SQL Analytical Views created:
 
 ## 🧮 Key SQL Code Samples
 
-**Total Loan Applications**
-SELECT COUNT(id) AS Total_Loan_Applications FROM loans_data;
+**Total Loan Applications**<br>
+
+`SELECT COUNT(id) AS Total_Loan_Applications FROM loans_data;`<br>
 <img width="229" height="62" alt="Screenshot 2025-10-26 003033" src="https://github.com/user-attachments/assets/8c5a21c3-b430-4396-9dd7-032275c8d92b" />
 
+---
 
-**Month-on-Month Funding Trend**
-CREATE VIEW Total_Funded_Amount AS
-SELECT MONTH(issue_date) AS Month, ROUND(SUM(loan_amount)) AS Monthly_Amount
-FROM loans_data
-GROUP BY MONTH(issue_date)
-ORDER BY MONTH(issue_date);
+**Month-on-Month Funding Trend**<br>
+
+`CREATE VIEW Total_Funded_Amount AS`<br>
+`SELECT MONTH(issue_date) AS Month, ROUND(SUM(loan_amount)) AS Monthly_Amount`<br>
+`FROM loans_data`<br>
+`GROUP BY MONTH(issue_date)`<br>
+`ORDER BY MONTH(issue_date);`<br>
 <img width="609" height="318" alt="Screenshot 2025-10-26 003319" src="https://github.com/user-attachments/assets/3274d87d-1a65-4b13-ab0b-99fe91c066e2" />
 
+---
 
-**Loan Performance Metrics View**
-CREATE VIEW Loan_Performance_Metrics_View AS
-SELECT
-loan_status AS Loans_Status,
-COUNT(id) AS Total_Loan_Applications,
-SUM(loan_amount) AS Total_Funded_Amount,
-SUM(total_payment) AS Total_Amount_Received,
-AVG(int_rate)*100 AS Average_Interest_Rate,
-AVG(dti)*100 AS Average_DTI
-FROM loans_data
-WHERE (issue_date) BETWEEN '2021-01-01' AND '2021-12-31'
-GROUP BY loan_status;
+**Loan Performance Metrics View**<br>
+
+`CREATE VIEW Loan_Performance_Metrics_View AS`<br>
+`SELECT`<br>
+`loan_status AS Loans_Status,`<br>
+`COUNT(id) AS Total_Loan_Applications,`<br>
+`SUM(loan_amount) AS Total_Funded_Amount,`<br>
+`SUM(total_payment) AS Total_Amount_Received,`<br>
+`AVG(int_rate)*100 AS Average_Interest_Rate,`<br>
+`AVG(dti)*100 AS Average_DTI`<br>
+`FROM loans_data`<br>
+`WHERE (issue_date) BETWEEN '2021-01-01' AND '2021-12-31'`<br>
+`GROUP BY loan_status;`<br>
 <img width="924" height="141" alt="Screenshot 2025-10-26 003933" src="https://github.com/user-attachments/assets/e730f461-deba-4c9b-ad19-6df6e89bf423" />
 
 
@@ -148,7 +153,13 @@ After building analytical SQL views, data was imported and modeled in Power BI.
 
 ### **Power BI Dashboards**
 <img width="1433" height="805" alt="Screenshot 2025-10-25 234146" src="https://github.com/user-attachments/assets/b0e23b93-f15a-4de7-ac84-3bad23622f37" />
+
+---
+
 <img width="1433" height="808" alt="Screenshot 2025-10-25 234038" src="https://github.com/user-attachments/assets/5b2aea35-3633-4c51-9e5a-bcd46be98819" />
+
+---
+
 <img width="1435" height="808" alt="Screenshot 2025-10-25 234412" src="https://github.com/user-attachments/assets/dad6926a-3dd6-4a09-98dc-2430f2d86b1a" />
 
 ---
